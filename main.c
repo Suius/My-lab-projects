@@ -5,7 +5,8 @@ int main()
 {
     float K, F, C, Temperature;
     char Letter;
-    scanf("%f %c", &Temperature , &Letter);
+    scanf("%f", &Temperature);
+    scanf("%c", &Letter);
     switch (Letter)
     {
        case 'c':
