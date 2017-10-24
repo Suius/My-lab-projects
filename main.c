@@ -8,7 +8,7 @@ int main()
     while (!feof(stdin))
     {
         int symbol = getchar();
-        int x;
+        int thingy;
         switch (symbol)
         {
         case ' ':
@@ -54,7 +54,7 @@ int main()
             }
             else
             {
-                stack[n] = x;
+                stack[n] = thingy;
                 n++;
             }
         }
