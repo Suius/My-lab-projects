@@ -1,5 +1,8 @@
-#include <iostream>
+#include <conio.h>
+#include <stdio.h>
 #include <time.h>
+#include <stdlib.h>
+#include <iostream>
 using namespace std;
 
 int main(int argc, char* argv[])
@@ -57,7 +60,7 @@ int main(int argc, char* argv[])
            }
        }
    }
-
+cout<<endl<<"LINE "<<temp_line+1<<" ROW "<<temp_sas+1<<" Min Element "<<temp<<endl;
 for (int i = 0 ; i < m ; i++)
 {
     for (int j = 0 ; j < n-1 ; j++)
@@ -121,7 +124,7 @@ for(int i = 0; i < m-1; i++)
       }
       }
 }
-
+cout<<endl;
 
 for (int i = 0 ; i < m-1 ; i++)
 {
