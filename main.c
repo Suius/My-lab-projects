@@ -2,7 +2,7 @@
 
 int main(int argc, char *argv[])
 {
-    int stack[1000];
+    int stack[100];
     int n = 0;
     int counter_numbers, counter_signs;
     counter_numbers = 0;
