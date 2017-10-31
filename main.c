@@ -6,12 +6,12 @@ int main(int argc, char *argv[])
     int n = 0;
     int counter_numbers, counter_signs;
     counter_numbers = 0;
-    counter_signs = 1;
+    counter_signs = 0;
     printf("Instructions:\n\nEnter numbers then mathematical signs and the equation sign to show the result;\n\nExample: 15 5 + =\n\nEnter the letter 'e' when finished\n\n");
     while (!feof(stdin))
     {
         int symbol = getchar();
-        int x;
+        int Thingy;
 
         switch (symbol)
         {
@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 
 
         case '=':
-            if (counter_numbers == counter_signs)
+            if (counter_numbers +1 == counter_signs)
             {
             printf ("Result = %d\n", stack[n-1]);
             n--;
@@ -65,14 +65,14 @@ int main(int argc, char *argv[])
 
         default:
             ungetc (symbol, stdin);
-            if (scanf("%d",&x)!=1)
+            if (scanf("%d",&Thingy)!=1)
             {
                 printf ("Can't understand what you typed in\n");
                 return -1;
             }
             else
             {
-                stack[n] = x;
+                stack[n] = Thingy;
                 n++;
             }
         }
