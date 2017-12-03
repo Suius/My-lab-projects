@@ -5,7 +5,6 @@ int main(int argc, char * argv[])
 {
     int array[Max_Size];
     int i,d;
-
     for (d=0 ; d < Max_Size ; d++)
     {
         array[d]=0;
@@ -15,7 +14,6 @@ int main(int argc, char * argv[])
     FILE *myfile;
     myfile = fopen("Sergey.txt", "r");
     char arr[Max_Size];
-
     while (fgets (arr, Max_Size, myfile) != NULL)
     {
        for (i = 0; arr[i]==' '; i++)
