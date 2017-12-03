@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define Max_Size 255
-int main()
+int main(int argc, char * argv[])
 {
     int array[Max_Size];
     int i,d;
