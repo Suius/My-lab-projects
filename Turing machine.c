@@ -68,7 +68,7 @@ int main(int argc, char * argv[])
            }
             break;
         case 'r':
-            if (array[d]==255)
+            if (array[d]==Max_Size)
             {
                 d=0;
             }
@@ -80,7 +80,7 @@ int main(int argc, char * argv[])
         case 'l':
             if (d==0)
             {
-                d=255;
+                d=Max_Size;
             }
             else
             {
