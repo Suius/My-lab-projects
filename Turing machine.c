@@ -5,6 +5,7 @@ int main(int argc, char * argv[])
 {
     int array[Max_Size];
     int i,d;
+    long int pos_begin, pos;
     for (d=0 ; d < Max_Size ; d++)
     {
         array[d]=0;
@@ -16,15 +17,21 @@ int main(int argc, char * argv[])
     char arr[Max_Size];
     while (fgets (arr, Max_Size, myfile) != NULL)
     {
+        pos=ftell(myfile);
        for (i = 0; arr[i]==' '; i++)
        {
+           if (i==Max_Size)
+           {
+               printf("\nString length exceeded. The process will be terminated.\n");
+               return -2;
+           }
        }
         switch (arr[i])
        {
         case 'i':
             if (array[d]==Max_Size)
             {
-                printf ("\nYou can't do that. This cell will be nullified \n");
+                printf ("\nUnable to increase by 1. This cell will be nullified \n");
             }
             else
             {
@@ -34,7 +41,7 @@ int main(int argc, char * argv[])
         case 'd':
             if (array[d]==0)
             {
-                printf ("\nYou can't do that. This cell's value will stay at zero \n");
+                printf ("\nUnable to decrease by 1. This cell's value will be nullified \n");
             }
             else
             {
@@ -47,20 +54,43 @@ int main(int argc, char * argv[])
         case 'g':
             scanf ("%d", &array[d]);
             break;
-        case 'm':
-            if (arr[i+3] == 'r')
+        case 'b':
+            if (array[d]!=0)
             {
-               d++;
+            pos_begin=ftell(myfile);
+            }
+            break;
+        case 'e':
+           if (array[d]!=0)
+           {
+           pos=pos_begin;
+           fseek(myfile, pos, SEEK_SET);
+           }
+            break;
+        case 'r':
+            if (array[d]==255)
+            {
+                d=0;
             }
             else
-           {
-               d--;
-           }
+            {
+                d++;
+            }
            break;
+        case 'l':
+            if (d==0)
+            {
+                d=255;
+            }
+            else
+            {
+                d--;
+            }
+            break;
         case '*':
             break;
         default:
-            printf ("\nUnidentified command/string length exceeded. The process will be terminated.\n");
+            printf ("\nUnidentified command. The process will be terminated.\n");
             return -1;
         }
    }
