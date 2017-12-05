@@ -12,7 +12,7 @@ int main(int argc, char * argv[])
     }
     cond=0;
     i=0;
-    d=0;
+    d=125;
     FILE *myfile;
     myfile = fopen("Sergey.txt", "r");
     char arr[Max_Size];
