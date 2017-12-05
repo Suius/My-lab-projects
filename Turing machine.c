@@ -89,7 +89,7 @@ int main(int argc, char * argv[])
             break;
         case 'a':
             printf ("%c ",array[d]);
-            break;        
+            break;
         case '*':
             break;
         default:
